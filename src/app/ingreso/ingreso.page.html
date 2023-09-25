@@ -1,0 +1,46 @@
+<ion-header [translucent]="true" id="mi-pagina">
+</ion-header>
+
+<ion-content [fullscreen]="true" id="mi-pagina">
+  <ion-header collapse="condense">
+  </ion-header>
+
+  <div id="style-logo-duoc">
+    <ion-img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Logo_DuocUC.svg"></ion-img>
+  </div>
+  <ion-card id="subtitulo" style="color: #FFFFFF;">
+    "Bienvenido al nuevo sistema de asistencia DuocUC"
+  </ion-card>
+
+
+
+  <div class="caja-login">
+    <ion-card>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-label class="prop-texto" position="floating">Correo</ion-label>
+            <ion-input type="text" [(ngModel)]="usuario.correo"  ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label class="prop-texto" position="floating">Contraseña</ion-label>
+            <ion-input type="password" [(ngModel)]="usuario.password"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-button class="prop-boton" (click)="ingresar()" expand ="full">Ingresar</ion-button>
+  </div>
+
+  <hr class="linea-separacion">
+  <br>
+  <ion-text id="prop-olv-contraseña">
+    <ion-chip color="dark" style="background-color: #F1B634;">¿Olvidaste tu contraseña?</ion-chip>
+  </ion-text>
+
+
+</ion-content>
+
+

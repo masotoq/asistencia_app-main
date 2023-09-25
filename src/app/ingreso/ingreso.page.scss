@@ -1,0 +1,91 @@
+
+
+
+
+
+
+#mi-pagina {
+  --background: url('https://upload.wikimedia.org/wikipedia/commons/3/33/Palacio_Eguiguren%2C_Santiago_20210807_36.jpg') 0 0 / cover no-repeat;
+  --background-size: cover;
+  --background-repeat: no-repeat;
+}
+
+#style-logo-duoc {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 33vh; /* Ajusta la altura según tus necesidades */
+
+}
+
+.caja-login {
+  display: flex-grow;
+  flex-direction: column;
+  align-items: center;
+  max-width: 350px; /* Ajusta el ancho máximo según tus preferencias */
+  margin: 0 auto; /* Centra horizontalmente el contenedor */
+  padding: 0px; /* Añade espaciado interno según tus preferencias */
+  opacity: 0.9;
+}
+
+#Titulo-bajo-imagen{
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 3vh; /* Ajusta la altura según tus necesidades */
+}
+
+#subtitulo{
+  opacity: 0.8;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  background-color: #132CAA;
+  font-family: Arial, Helvetica, sans-serif;
+
+
+
+
+
+}
+
+.prop-texto {
+  opacity: 0.5; /* Valor entre 0 (totalmente transparente) y 1 (completamente opaco) */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+.prop-boton {
+  opacity: 0.9;
+  --background: #132CAA;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+.linea-separacion {
+
+  border: none;
+  border-top: 2px solid #666666;
+  margin-top: 50px;
+  margin-bottom: 1px;
+  border-radius: 10px;
+  height: 4vh; /* Ajusta la altura según tus necesidades */
+}
+
+#prop-olv-contraseña {
+  font-size: 12px;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  font-family: Arial, Helvetica, sans-serif;
+  color:#FFFFFF;
+  opacity: 0.9;
+
+
+
+
+
+}
+
+
+

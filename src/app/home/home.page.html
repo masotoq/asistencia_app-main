@@ -1,0 +1,108 @@
+
+<ion-header [translucent]="true">
+
+</ion-header>
+
+<div id="img_logo_duoc_prop">
+  <ion-img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Logo_DuocUC.svg"></ion-img>
+</div>
+<div id="letras_logo_duoc_prop">
+  <ion-text>Centro de asistencias DuocUC</ion-text>
+</div>
+<ion-content class="ion-padding"id="mi-pagina" >
+  <div>
+    <h1 class="ion-text-center">Bienvenido/a </h1>
+    <h2 class="ion-text-start" #nombre *ngIf="usuario">{{ usuario.nombre }}</h2>
+  </div>
+
+
+  <ion-button class="ion-padding" *ngIf="!escaneando" (click)="comenzarEscaneoQR()" expand="full" shape="round">
+    <ion-icon slot="start" name="qr-code-outline"></ion-icon>
+    Escanear QR
+  </ion-button>
+
+  <ion-button class="ion-padding" *ngIf="escaneando" (click)="detenerEscaneoQR()" expand="full" shape="round">
+    <ion-icon slot="start" name="stop-circle-outline"></ion-icon>
+    Detener escaneo de QR
+  </ion-button>
+
+  <ion-text class="ion-text-center">
+    <h5>Escanea el codigo QR para registrar tu asistencia a clases</h5>
+  </ion-text>
+
+  <video class="ion-padding" #video [hidden]="!escaneando" width="100%"></video>
+  <canvas #canvas hidden></canvas>
+
+
+
+
+  <ion-card>
+    <ion-card-header>
+      <h3>Datos:</h3>
+    </ion-card-header>
+
+    <ion-card-content class="borde" *ngIf="bloqueInicio || bloqueTermino || dia || horaFin || horaInicio || idAsignatura || nombreAsignatura || nombreProfesor || seccion || sede">
+      <table>
+        <tr>
+          <td>Bloque de inicio:</td>
+          <td>{{ bloqueInicio }}</td>
+        </tr>
+        <tr>
+          <td>Bloque de termino:</td>
+          <td>{{ bloqueTermino }}</td>
+        </tr>
+        <tr>
+          <td>Dia:</td>
+          <td>{{ dia }}</td>
+        </tr>
+        <tr>
+          <td>Hora de termino:</td>
+          <td>{{ horaFin }}</td>
+        </tr>
+        <tr>
+          <td>Hora de inicio:</td>
+          <td>{{ horaInicio }}</td>
+        </tr>
+        <tr>
+          <td>Codigo de asignatura:</td>
+          <td>{{ idAsignatura }}</td>
+        </tr>
+        <tr>
+          <td>Nombre de asignatura:</td>
+          <td>{{ nombreAsignatura }}</td>
+        </tr>
+        <tr>
+          <td>Nombre de Profesor:</td>
+          <td>{{ nombreProfesor }}</td>
+        </tr>
+        <tr>
+          <td>Sección:</td>
+          <td>{{ seccion }}</td>
+        </tr>
+        <tr>
+          <td>Sede:</td>
+          <td>{{ sede }}</td>
+        </tr>
+      </table>
+    </ion-card-content>
+    <ion-card-content *ngIf="!(bloqueInicio || bloqueTermino || dia || horaFin || horaInicio || idAsignatura || nombreAsignatura || nombreProfesor || seccion || sede)">
+      <p>Sin información</p>
+    </ion-card-content>
+  </ion-card>
+
+
+
+
+
+
+    <ion-button id="prop_botones" (click)="cerrarSesion()" class="ion-padding ion-bottom" color="danger" expand="full" shape="round"  >
+      <ion-icon slot="start" name="log-out-outline"></ion-icon>
+      Cerrar Sesion
+    </ion-button>
+
+
+
+
+
+</ion-content>
+
