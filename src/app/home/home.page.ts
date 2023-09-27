@@ -176,10 +176,7 @@ export class HomePage {
 
 
   }
-
-
-
-
+  
   public detenerEscaneoQR(): void {
     this.escaneando = false;
   }
@@ -202,7 +199,6 @@ export class HomePage {
     };
     this.router.navigate(['/miclase'], navigationExtras)
   }
-
 
 
 }
