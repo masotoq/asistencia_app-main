@@ -1,23 +1,20 @@
-
 <ion-header [translucent]="true">
+  <div id="img_logo_duoc_prop">
+    <ion-img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Logo_DuocUC.svg"></ion-img>
+  </div>
 
 </ion-header>
 
-<div id="img_logo_duoc_prop">
-  <ion-img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Logo_DuocUC.svg"></ion-img>
-</div>
-<div id="letras_logo_duoc_prop">
-  <ion-text>Centro de asistencias DuocUC</ion-text>
-</div>
-<ion-content class="ion-padding"id="mi-pagina" >
+
+
+<ion-content class="ion-padding" id="mi-pagina">
   <div>
-    <h1 class="ion-text-center">Bienvenido/a </h1>
+    <h1 class="ion-text-center-bv">Bienvenido/a</h1>
     <h2 class="ion-text-start" #nombre *ngIf="usuario">{{ usuario.nombre }}</h2>
   </div>
 
-
   <ion-button class="ion-padding" *ngIf="!escaneando" (click)="comenzarEscaneoQR()" expand="full" shape="round">
-    <ion-icon slot="start" name="qr-code-outline"></ion-icon>
+    <ion-icon id="hola" slot="start" name="qr-code-outline"></ion-icon>
     Escanear QR
   </ion-button>
 
@@ -26,15 +23,12 @@
     Detener escaneo de QR
   </ion-button>
 
-  <ion-text class="ion-text-center">
-    <h5>Escanea el codigo QR para registrar tu asistencia a clases</h5>
+  <ion-text class="ion-text-center-esc">
+    <h5>Escanea el código QR para registrar tu asistencia a clases</h5>
   </ion-text>
 
   <video class="ion-padding" #video [hidden]="!escaneando" width="100%"></video>
   <canvas #canvas hidden></canvas>
-
-
-
 
   <ion-card>
     <ion-card-header>
@@ -48,15 +42,15 @@
           <td>{{ bloqueInicio }}</td>
         </tr>
         <tr>
-          <td>Bloque de termino:</td>
+          <td>Bloque de término:</td>
           <td>{{ bloqueTermino }}</td>
         </tr>
         <tr>
-          <td>Dia:</td>
+          <td>Día:</td>
           <td>{{ dia }}</td>
         </tr>
         <tr>
-          <td>Hora de termino:</td>
+          <td>Hora de término:</td>
           <td>{{ horaFin }}</td>
         </tr>
         <tr>
@@ -64,7 +58,7 @@
           <td>{{ horaInicio }}</td>
         </tr>
         <tr>
-          <td>Codigo de asignatura:</td>
+          <td>Código de asignatura:</td>
           <td>{{ idAsignatura }}</td>
         </tr>
         <tr>
@@ -90,19 +84,8 @@
     </ion-card-content>
   </ion-card>
 
-
-
-
-
-
-    <ion-button id="prop_botones" (click)="cerrarSesion()" class="ion-padding ion-bottom" color="danger" expand="full" shape="round"  >
-      <ion-icon slot="start" name="log-out-outline"></ion-icon>
-      Cerrar Sesion
-    </ion-button>
-
-
-
-
-
+  <ion-button id="prop_botones" (click)="cerrarSesion()" class="ion-padding ion-bottom" color="danger" expand="full" shape="round">
+    <ion-icon slot="start" name="log-out-outline"></ion-icon>
+    Cerrar Sesión
+  </ion-button>
 </ion-content>
-

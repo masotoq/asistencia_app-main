@@ -2,7 +2,7 @@ import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import jsQR, { QRCode } from 'jsqr';
 import { Asistencia } from 'src/app/model/asistencia';
 import { Usuario } from 'src/app/model/usuario';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { AlertController, IonicSafeString } from '@ionic/angular';
 import { Persona } from 'src/app/model/persona';
 import { Animation, AnimationController} from '@ionic/angular';
@@ -172,31 +172,37 @@ export class HomePage {
     this.seccion = objetoDatosQR.seccion;
     this.sede = objetoDatosQR.sede;
 
+    this.cambioPag();
 
 
-
-
-    // ----------------------------------
-    // TAREA PARA COMPLETAR POR EL ALUMNO
-    // ----------------------------------
-    // 1) Ejecutar el setter de la clase Asistencia:
-    //     this.asistencia.setAsistencia(...parametros...)
-    //    de modo que los parámetros los tome del objeto datosQR,
-    //    por ejemplo: datosQR.nombreAsignatura contiene el valor
-    //    del nombre de la asignatura en la cual el alumno
-    //    debe quedar presente.
-    // 2) Hacer una interpolación entre las propiedades
-    //    de "this.asistencia" y la página HTML, de modo
-    //    que la página muestre de manera ordenada estos datos.
   }
 
 
 
-  // Si la propiedad this.escaneando cambia a false, entonces la función
-  // "verificarVideo" deja de ejecutarse y se detiene el escaneo del QR.
 
   public detenerEscaneoQR(): void {
     this.escaneando = false;
   }
+
+  public cambioPag(): void {
+    const navigationExtras: NavigationExtras = {
+      state: {
+        usuario: this.usuario,
+        sede: this.sede,
+        idAsignatura: this.idAsignatura,
+        seccion: this.seccion,
+        nombreAsignatura: this.nombreAsignatura,
+        nombreProfesor: this.nombreProfesor,
+        dia: this.dia,
+        bloqueInicio: this.bloqueInicio,
+        bloqueTermino: this.bloqueTermino,
+        horaInicio: this.horaInicio,
+        horaFin: this.horaFin
+      }
+    };
+    this.router.navigate(['/miclase'], navigationExtras)
+  }
+
+
 
 }
